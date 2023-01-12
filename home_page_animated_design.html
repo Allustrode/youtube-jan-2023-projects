@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+            transition: 2s;
+            font-family: roboto;
+        }
+
+        .rain_container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(228, 228, 228);
+            overflow: hidden;
+        }
+
+        header {
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            display: flex;
+            padding: 3em 5em 1em 5em;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        header>a {
+            all: unset;
+            font-weight: 600;
+            font-size: 1.4rem;
+            color: rgb(0, 112, 134);
+        }
+
+        nav ul {
+            width: max-content;
+            display: flex;
+            align-self: center;
+        }
+
+        nav ul li {
+            list-style: none;
+        }
+
+        nav ul li>a {
+            text-transform: capitalize;
+            margin: 0% 1.4em;
+            text-decoration: none;
+            color: rgb(0, 112, 134);
+        }
+
+        nav ul li>a:hover {
+            transition: .2s;
+            color: rgb(27, 126, 184);
+        }
+
+        a.btn {
+            color: rgb(27, 126, 184);
+            text-decoration: none;
+            padding: 6px 16px;
+            border-radius: 10px;
+            border: 1px outset rgb(0, 139, 173);
+        }
+
+        a.btn:hover {
+            transition: .2s;
+            color: rgb(230, 230, 230);
+            background-color: rgb(27, 126, 184);
+        }
+
+        .content_box {
+            text-align: center;
+            width: 800px;
+        }
+
+        .rain_container h1 {
+            text-transform: capitalize;
+            margin-bottom: 2rem;
+            transform: scaleY(2);
+            font-size: 3rem;
+            color: rgb(27, 126, 184);
+        }
+
+        .rain_container p {
+            padding: 0% 8rem;
+            margin: 1rem 0;
+            font-size: .6rem;
+            letter-spacing: 1px;
+            color: rgb(70, 70, 70);
+        }
+
+        .rain_container span {
+            height: 10px;
+            width: 2px;
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            background-color: rgb(0, 102, 255);
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="rain_container">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        <div class="main">
+            <header>
+                <a href="">Rainy Logo</a>
+                <nav>
+                    <ul>
+                        <li><a href="/">home</a></li>
+                        <li><a href="/">store</a></li>
+                        <li><a href="/">premium</a></li>
+                        <li><a href="/">about</a></li>
+                        <li><a class="btn" href="/">EXPLORE</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <div class="content_box">
+                <h1>ITS RAINING</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis quia expedita laudantium! Beatae,
+                    delectus in excepturi sapiente sit cum ipsam
+                    <br><br>
+                </p>
+                <a class="btn" href="/">EXPLORE NOW</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let sp = document.querySelectorAll("span");
+        for (let i = 0; i < sp.length; i++) {
+            sp[i].style.left = `${i}%`;
+        }
+        setInterval(() => {
+            let no = Math.floor(Math.random() * 100);
+            sp[no].style.transition = `0s`;
+            sp[no].style.top = `-50%`;
+            sp[no].style.opacity = `1`;
+            sp[no].style.height = `10px`;
+            setTimeout(() => {
+                sp[no].style.transition = `3s`;
+                sp[no].style.top = `110%`;
+                sp[no].style.opacity = `0`;
+                sp[no].style.height = `60px`;
+            }, 1000);
+        }, 40);
+    </script>
+</body>
+
+</html>

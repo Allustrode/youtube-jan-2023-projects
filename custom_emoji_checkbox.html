@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider button</title>
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: rgb(0, 0, 0);
+        }
+
+        .container {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .container::before {
+            content: "";
+            height: 4rem;
+            width: 4px;
+            position: absolute;
+            left: 0%;
+            top: 0%;
+            transform-origin: bottom right;
+            transform: translate(-0%, -50%);
+            border-radius: 4rem;
+            transition: 1s;
+            background-color: rgb(157 0 0);
+        }
+
+        #checkbox {
+            appearance: none;
+            height: 3rem;
+            width: 3rem;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-120%, -50%) rotate(-180deg);
+            border-radius: 3rem;
+            background-color: rgb(157 0 0);
+            transition: .4s ease-in-out;
+
+        }
+
+        #checkbox:checked {
+            background-color: rgb(83 193 0);
+            transform: translate(20%, -50%) rotate(0deg);
+        }
+
+        .container:has(#checkbox:checked)::before {
+            background-color: rgb(83 193 0);
+            transform: translate(-0%, -50%) rotate(90deg);
+            transition: .1s;
+        }
+
+        #checkbox:checked::before,
+        #checkbox:checked::after {
+            height: .4rem;
+            width: .4rem;
+        }
+
+        #checkbox::after,
+        ::before {
+            content: "";
+            height: .2rem;
+            width: .6rem;
+            position: absolute;
+            left: 30%;
+            top: 30%;
+            transform: translate(0%, 0%);
+            border-radius: 50%;
+            background-color: rgb(0, 0, 0);
+        }
+
+        #checkbox::before {
+            left: 60%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <input type="checkbox" name="checkbox" id="checkbox">
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        .conatiner {
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            place-items: center;
+            background: rgb(235, 235, 235);
+        }
+
+        .review_list {
+            display: flex;
+            list-style: none;
+        }
+
+        .review_item:hover {
+            opacity: .8;
+        }
+
+        .review_item {
+            width: 300px;
+            margin: 0% 1rem;
+            padding: 1rem;
+            border-radius: 12px;
+            background: rgb(226, 226, 226);
+            box-shadow:
+                inset 2px 2px 1px white,
+                4px 4px 4px rgba(0, 0, 0, 0.267);
+        }
+
+        .review_img {
+            height: 44px;
+            width: 44px;
+            float: left;
+            border-radius: 6px;
+            margin-right: 1rem;
+            margin-bottom: .4rem;
+            box-shadow: inset 4px 4px 4px rgba(255, 37, 37, 0.89);
+            overflow: hidden;
+        }
+
+        .review_img img {
+            margin: auto;
+            width: 100%;
+        }
+
+        .review_item h2 {
+            line-height: 100%;
+            margin-top: 4px;
+            color: rgb(0, 90, 192);
+            font-size: 16px;
+        }
+
+        .review_item span>p {
+            font-size: 12px;
+            margin-right: 4px;
+        }
+
+        .review_item span {
+            position: relative;
+            display: flex;
+            align-items: center;
+            width: fit-content;
+        }
+
+        .review_item span .star {
+            align-self: flex-end;
+            font-style: normal;
+            height: 16px;
+            width: 16px;
+            clip-path: polygon(40% 40%, 50% 10%, 60% 40%, 90% 40%, 65% 60%, 70% 90%, 50% 70%, 25% 90%, 35% 60%, 10% 40%);
+            background-color: rgb(54, 54, 54);
+        }
+
+        .review_item span .star::before {
+            content: "";
+            height: 100%;
+            width: 72%;
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            background-color: rgb(18, 219, 0);
+        }
+
+        .review_item span.span2 .star::before {
+            width: 100%;
+        }
+
+        .review_item span.span3 .star::before {
+            width: 90%;
+        }
+
+        .review_item p {
+            color: rgb(99, 99, 99);
+            padding-top: 10px;
+            font-size: 12px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="conatiner">
+        <ul class="review_list">
+            <li class="review_item">
+                <div class="review_img"><img src="images/images (4).jfif" alt=""></div>
+                <h2>Reviewer Name</h2>
+                <span class="span1">
+                    <p>3.2</p>
+                    <i class="star"></i>
+                    <i class="star"></i>
+                    <i class="star"></i>
+                    <i class="star"></i>
+                    <i class="star"></i>
+                </span>
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt rerum tenetur dolores sapiente.
+                    Accusamus, fugiat, magnam molestiae eum aspernatur possimus eveniet, ea deserun sdf sfds dasd das
+                    ewr rwerwe t laboriosam deleniti! Praesentium nostrum.
+                </p>
+            </li>
+            <li class="review_item">
+                <div class="review_img"><img src="images/images (1).jfif" alt=""></div>
+                <h2>Reviewer Name</h2>
+                <span class="span2">
+                    <p>5.0</p>
+                    <i class="star"></i>
+                    <i class="star"></i>
+                    <i class="star"></i>
+                    <i class="star"></i>
+                    <i class="star"></i>
+                </span>
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt rerum tenetur dolores sapiente.
+                    Accusamus, fugiat, magnam molestiae eum aspernatur possimus eveniet, ea deserun sdf sfds dasd das
+                    ewr rwerwe t laboriosam deleniti! Praesentium nostrum.
+                </p>
+            </li>
+            <li class="review_item">
+                <div class="review_img"><img src="images/images (3).jfif" alt=""></div>
+                <h2>Reviewer Name</h2>
+                <span class="span3">
+                    <p>4.7</p>
+                    <i class="star"></i>
+                    <i class="star"></i>
+                    <i class="star"></i>
+                    <i class="star"></i>
+                    <i class="star"></i>
+                </span>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt rerum tenetur dolores sapiente.
+                    Accusamus, fugiat, magnam molestiae eum aspernatur possimus eveniet, ea deserun sdf sfds dasd das
+                    ewr rwerwe t laboriosam deleniti! Praesentium nostrum.</p>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

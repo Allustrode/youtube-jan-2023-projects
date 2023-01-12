@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+            font-family: serif;
+        }
+
+        body {
+            height: 100vh;
+            display: grid;
+            place-items: center;
+            background-color: rgb(0, 0, 0);
+        }
+
+        .container {
+            position: relative;
+            display: flex;
+        }
+
+        .item {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            margin-inline: 10px;
+            border-bottom-left-radius: 0%;
+            transform: scale(.3) rotate(-45deg);
+            border: 1px solid rgb(119, 132, 255);
+            border-top-width: 4px;
+            border-right-width: 4px;
+            transform-origin: left bottom;
+            animation: scaleup 2s ease-out infinite;
+        }
+
+        .item:nth-child(2) {
+            animation-delay: .2s;
+        }
+
+        .item:nth-child(3) {
+            animation-delay: .3s;
+        }
+
+        .item:nth-child(4) {
+            animation-delay: .4s;
+        }
+
+        @keyframes scaleup {
+            0% {
+                filter: hue-rotate(0deg);
+                transform: scale(0.6) rotate(-45deg);
+            }
+
+            10% {
+                transform: scale(.6) rotate(-45deg);
+            }
+
+            70% {
+                transform: scale(1) rotate(-45deg);
+            }
+
+            100% {
+                filter: hue-rotate(360deg);
+                transform: scale(0.6) rotate(315deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <span class="container">
+        <i class="item"></i>
+        <i class="item"></i>
+        <i class="item"></i>
+        <i class="item"></i>
+    </span>
+</body>
+
+</html>
