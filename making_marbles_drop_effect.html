@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+            font-family: system-ui;
+        }
+
+        .container {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+        }
+
+        .box {
+            height: 2rem;
+            width: 2rem;
+            border-radius: 50%;
+            margin-inline: 6px;
+            background-color: rgb(88, 230, 255);
+            box-shadow:
+                inset 10px 0 10px rgb(72, 99, 255),
+                inset -6px 5px 6px rgb(129, 0, 155),
+                inset -10px -5px 2px rgb(0, 15, 102),
+                inset -20px -10px 6px rgb(0, 30, 202),
+                0 0px 0px rgb(221, 254, 255);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+    <script>
+        gsap.from(".box", { y: -400, duration: 2, stagger: .1, repeat: -1, ease: "bounce.out" });
+    </script>
+</body>
+
+</html>
