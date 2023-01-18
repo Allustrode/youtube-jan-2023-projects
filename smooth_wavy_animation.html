@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- This is for using gsap animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+
+    <!-- we using this plugin  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/MotionPathPlugin.min.js"></script>
+
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+            background: rgb(0, 0, 0);
+        }
+
+        .item {
+            position: absolute;
+            height: 25px;
+            width: 25px;
+            top: 150px;
+            left: -50px;
+            border-radius: 50%;
+            background: #00ad5c;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item" id="item"></div>
+        <div class="item" id="item"></div>
+        <div class="item" id="item"></div>
+        <div class="item" id="item"></div>
+        <div class="item" id="item"></div>
+        <div class="item" id="item"></div>
+        <div class="item" id="item"></div>
+        <div class="item" id="item"></div>
+        <div class="item" id="item"></div>
+        <div class="item" id="item"></div>
+        <div class="item" id="item"></div>
+        <div class="item" id="item"></div>
+        <div class="item" id="item"></div>
+        <div class="item" id="item"></div>
+        <div class="item" id="item"></div>
+        <div class="item" id="item"></div>
+        <div class="item" id="item"></div>
+        <div class="item" id="item"></div>
+        <div class="item" id="item"></div>
+        <div class="item" id="item"></div>
+    </div>
+    <script>
+        gsap.registerPlugin(MotionPathPlugin);
+
+        gsap.to(".item", {
+            duration: 5,
+            filter: "hue-Rotate(360deg)",
+            ease: "power1.inOut",
+            stagger: .01,
+            repeat: -1,
+        })
+        gsap.to(".item", {
+            duration: 5,
+            ease: "power2.inOut",
+            stagger: .01,
+            repeat: -1,
+            immediateRender: true,
+            motionPath: {
+                path: [
+                    { x: 200, y: 0 },
+                    { x: 400, y: 200 },
+                    { x: 600, y: 0 },
+                    { x: 800, y: 200 },
+                    { x: 1000, y: 0 },
+                    { x: 1200, y: 200 },
+                    { x: 1400, y: 0 }
+                ],
+                curviness: 1.4,
+            }
+        });
+
+    </script>
+</body>
+
+</html>
