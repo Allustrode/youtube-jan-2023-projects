@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+            color: whitesmoke;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .container {
+            height: 100vh;
+            background:
+                linear-gradient(31deg,
+                    #BDC667 10%,
+                    #011627 10%, #011627 14%,
+                    #BDC667 14%, #BDC667 45%,
+                    #011627 45%);
+            background-size: 100% 10%;
+            animation: animate 10s linear infinite;
+        }
+
+        .container:has(.header .header_list:hover) {
+            animation-play-state: paused;
+        }
+
+        @keyframes animate {
+            0% {
+                filter: hue-rotate(0deg);
+                background-position: 0% 0%;
+            }
+
+            100% {
+                filter: hue-rotate(-360deg);
+                background-position: 0% -100%;
+            }
+
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 40px;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            padding-left: 14.5em;
+            width: 30px;
+            height: 30px;
+        }
+
+        .logo h1 {
+            font-size: 2.6em;
+            font-weight: 800;
+            color: #011627;
+        }
+
+        .header_list {
+            display: flex;
+            list-style: none;
+        }
+
+        .header_item a {
+            font-size: 1.2em;
+            text-transform: capitalize;
+            display: inline-block;
+            text-decoration: none;
+            margin-inline: 20px;
+        }
+
+        .header_item a:hover,
+        .header_item a.active {
+            text-decoration: underline;
+            text-underline-offset: 10px;
+            color: #BDC667;
+            text-decoration-color: #BDC667;
+        }
+
+        .content {
+            float: right;
+            text-align: end;
+            padding: 4em 4em 0 0em;
+            width: 700px;
+            max-width: 560px;
+        }
+
+        .content h2 {
+            font-size: 4em;
+            margin-bottom: .5em;
+            color: #BDC667;
+        }
+
+        .content p {
+            font-size: .8em;
+            color: rgb(172, 172, 172);
+        }
+
+        .content .btn {
+            display: block;
+            float: right;
+            width: max-content;
+            padding: 10px 60px;
+            margin: 20px 0%;
+            color: #011627;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: large;
+            background: linear-gradient(45deg, #011627 20%, #BDC667 26%, #BDC667 80%, #011627 80%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo"><img src="" alt="">
+                <h1>LOgO</h1>
+            </div>
+            <ul class="header_list">
+                <li class="header_item"><a class="active" href="/new.html">Home</a></li>
+                <li class="header_item"><a href="/">our shop</a></li>
+                <li class="header_item"><a href="/">join us</a></li>
+                <li class="header_item"><a href="/">contact</a></li>
+                <li class="header_item"><a href="/">more</a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <h2>Let's Make Something Great Together</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae asperiores ad sapiente nulla accusantium
+                quos, itaque facere rerum unde eveniet sequi aperiam odit nam soluta nostrum porro molestiae possimus
+                voluptatem?</p>
+            <a class="btn" href="/">Connect</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
