@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+            transition: 5s;
+            user-select: none;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgb(0, 0, 0);
+            overflow: hidden;
+        }
+
+        .item {
+            position: relative;
+            height: 40px;
+            width: 40px;
+            margin-left: 4px;
+        }
+        .item::before{
+            content: "";
+            height: 4px;
+            width: 20px;
+            position: absolute;
+            top: 50%;
+            left: 25%;
+            border-radius: 1em;
+            background: rgb(255, 113, 113);
+            animation: color 10s linear infinite;
+            
+        }
+        .item:nth-child(3n+2)::before{
+            animation: color 5s linear infinite reverse;
+        }
+        .item:nth-child(5n+5)::before{
+            animation: color 5s linear infinite alternate-reverse;
+        }
+        .item:hover:before{
+            animation-play-state: paused;
+        }
+        @keyframes color {
+            0% {
+                filter: hue-rotate(0deg);
+                transform: rotate(0deg);
+            }
+            
+            100% {
+                filter: hue-rotate(360deg);
+                transform: rotate(-360deg);
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span>
+        <span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span>
+        <span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span>
+        <span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span><span class="item"></span>
+    </div>
+</body>
+
+</html>
