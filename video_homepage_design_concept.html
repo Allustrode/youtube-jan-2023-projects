@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(255, 255, 255);
+        }
+
+        .video_cont {
+            max-height: 100vh;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .hero {
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            height: 100vh;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 40px;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            width: 30px;
+            height: 30px;
+        }
+
+        .header_list {
+            display: flex;
+            list-style: none;
+        }
+
+        .header_item a {
+            text-transform: capitalize;
+            text-decoration: none;
+            display: inline-block;
+            padding: 2px 6px;
+            border-left: 2px solid #ffffff00;
+            border-bottom: 2px solid #ffffff;
+            margin-inline: 20px;
+        }
+
+        .header_item a:hover,
+        .header_item a.active {
+            border-left: 2px solid #dddddd;
+            color: #dddddd;
+        }
+
+        .content {
+            padding: 4em;
+            max-width: 500px;
+        }
+
+        .content h2 {
+            font-size: 3em;
+            margin-bottom: .5em;
+            animation: floating 1.6s linear infinite both;
+        }
+
+        .content p {
+            font-size: .8em;
+            color: #a8a8a8;
+            animation: floating 2s linear infinite both;
+        }
+
+        .content .btn {
+            display: inline-block;
+            margin-top: 1.4em;
+            text-decoration: none;
+            padding: 5px 10px;
+            font-size: 1.6em;
+            border-left: 2px solid white;
+            border-bottom: 2px solid white;
+            transition: .1s;
+        }
+
+        .content .btn:hover {
+            transform: scale(1.1);
+        }
+
+        .highlight_box {
+            position: absolute;
+            right: 5%;
+            top: 25%;
+            width: 400px;
+            border-radius: 1em;
+            padding: 2em 4em;
+            border-right: 1px solid white;
+            border-left: 1px solid white;
+            backdrop-filter: blur(8px);
+            animation: floating 2s ease-in-out infinite both;
+        }
+
+        :is(.content h2, .content p, .highlight_box):hover {
+            animation-play-state: paused;
+        }
+
+        .highlight_item {
+            text-transform: capitalize;
+            padding: 1em;
+            margin: 1em 0;
+            font-weight: 600;
+            list-style: "⚪";
+        }
+
+
+        @keyframes floating {
+            0% {
+                transform: translate(0);
+            }
+
+            20% {
+                transform: translate(-2px, 2px);
+            }
+
+            40% {
+                transform: translate(-2px, -2px);
+            }
+
+            60% {
+                transform: translate(2px, 2px);
+            }
+
+            80% {
+                transform: translate(2px, -2px);
+            }
+
+            100% {
+                transform: translate(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="video_cont">
+            <!-- you have to download the video -->
+            <!-- unless it is not visible -->
+            <video width="100%" autoplay loop muted preload="auto"
+                src="../assets/pexels-dario-fernandez-ruz-9130068.mp4"></video>
+        </div>
+
+        <div class="hero">
+            <div class="header">
+                <div class="logo"><img src="" alt="">
+                    <h1>LoGoo...</h1>
+                </div>
+                <ul class="header_list">
+                    <li class="header_item"><a class="active" href="/">Home</a></li>
+                    <li class="header_item"><a href="/">code shop</a></li>
+                    <li class="header_item"><a href="/">portfolio</a></li>
+                    <li class="header_item"><a href="/">blog</a></li>
+                    <li class="header_item"><a href="/">contact</a></li>
+                </ul>
+            </div>
+
+            <div class="content">
+                <h2>Let's Connect and Grow Together</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae asperiores ad sapiente nulla
+                    accusantium quos, itaque facere rerum unde eveniet sequi aperiam odit nam soluta nostrum porro
+                    molestiae possimus voluptatem?</p>
+                <a href="#" class="btn">Hire Me</a>
+            </div>
+            <div class="highlight_box">
+                <ul class="highlight_list">
+                    <li class="highlight_item">Under top 10 at plateform 1 </li>
+                    <li class="highlight_item">Rank #2 on plateform 2</li>
+                    <li class="highlight_item">Awarded For best coder</li>
+                    <li class="highlight_item">Other</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
