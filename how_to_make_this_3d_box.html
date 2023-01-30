@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+
+        .container {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #000;
+            overflow: hidden;
+            animation: color 10s linear infinite;
+        }
+
+        .box {
+            position: relative;
+            height: 200px;
+            width: 200px;
+            border: none;
+            transform: rotateX(-10deg) rotatey(-45deg);
+            animation: rotateAnim 5s linear infinite;
+            transform-style: preserve-3d;
+        }
+
+        @keyframes rotateAnim {
+            0% {
+                transform: rotateX(-10deg) rotatey(-45deg);
+            }
+
+            100% {
+                transform: rotateX(-10deg) rotatey(-405deg);
+            }
+        }
+
+        @keyframes color {
+            0% {
+                filter: hue-rotate(0deg);
+            }
+
+            100% {
+                filter: hue-rotate(360deg);
+            }
+        }
+
+        .box h1 {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            font-size: 4em;
+            transform: translate(-50%, -50%);
+        }
+
+        .container:has(.box:hover) {
+            animation-play-state: paused;
+        }
+
+        .box:hover .front {
+            transform: translateZ(300px);
+        }
+
+        .box:hover .back {
+            transform: translateZ(-300px);
+        }
+
+        .box:hover .left {
+            transform: translate(-200px, 0px) rotatey(90deg);
+        }
+
+        .box:hover .right {
+            transform: translate(200px, 0px) rotatey(90deg);
+        }
+
+        .box:hover .top {
+            transform: translate(0px, -100px) rotateX(90deg);
+        }
+
+        .sides {
+            transition: 1s cubic-bezier(1, -0.03, 0.17, 1.01);
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            height: 200px;
+            width: 200px;
+            transform-style: preserve-3d;
+            border: 2px solid transparent;
+            background: #006eff;
+            box-shadow: inset 0px 0px 100px rgb(9, 54, 255);
+        }
+
+        .top {
+            top: -50%;
+            background: #7381ff;
+            transform: rotateX(90deg);
+        }
+
+        .front {
+            left: 0%;
+            top: 0%;
+            transform: translateZ(100px);
+        }
+
+        :is(.front, .back, .left, .right)::before {
+            content: "";
+            position: absolute;
+            height: inherit;
+            width: inherit;
+            background: linear-gradient(#006eff6c, black 50%);
+            transform: translateY(100%);
+        }
+
+        .back {
+            left: 0%;
+            top: 0%;
+            transform: translateZ(-100px);
+        }
+
+        .right {
+            left: 50%;
+            background-color: #0047a5;
+            transform: rotatey(90deg);
+        }
+
+        .left {
+            left: -50%;
+            background-color: #0047a5;
+            transform: rotatey(90deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <h1>👀</h1>
+            <div class="sides top"></div>
+            <div class="sides front"></div>
+            <div class="sides left"></div>
+            <div class="sides right"></div>
+            <div class="sides back"></div>
+        </div>
+    </div>
+</body>
+
+</html>
